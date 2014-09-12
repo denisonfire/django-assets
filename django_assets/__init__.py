@@ -5,8 +5,8 @@ from django_assets.env import register
 
 __all__ = ('Bundle', 'register')
 
-__version__ = (0, 8, 'hh1')
-__webassets_version__ = (0, 8)
+__version__ = (0, 9, 'hh1')
+__webassets_version__ = (0, 9)
 
 
 from django_assets import filter
