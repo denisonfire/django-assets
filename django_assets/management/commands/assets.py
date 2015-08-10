@@ -103,10 +103,9 @@ class Command(BaseCommand):
         # along to the webassets command.
         # Hooking into run_from_argv() would be another thing to try
         # if this turns out to be problematic.
-        return LaxOptionParser(prog=prog_name,
-            usage=self.usage(subcommand),
-            version=self.get_version(),
-            option_list=self.option_list)
+        parser = BaseCommand.create_parser(self, prog_name, subcommand)
+        parser.__class__ = LaxOptionParser
+        return parser
 
     def handle(self, *args, **options):
         # Due to the use of LaxOptionParser ``args`` now contains all
